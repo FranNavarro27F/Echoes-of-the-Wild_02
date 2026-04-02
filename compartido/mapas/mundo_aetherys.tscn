@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://65wy7kb7hgis"]
 
 [ext_resource type="Script" uid="uid://b5iev2kuvsbw8" path="res://compartido/mapas/mundo_aetherys.gd" id="1_d7484"]
+[ext_resource type="PackedScene" uid="uid://px517uhy5w3n" path="res://compartido/entidades/ObjetoInteractuable.tscn" id="2_lo48n"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_jlp2e"]
 
@@ -38,3 +39,18 @@ environment = SubResource("Environment_h61kx")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1065993148]
 transform = Transform3D(1, 0, 0, 0, 0.260791, 0.9653953, 0, -0.9653953, 0.260791, 0, 18.121109, 0)
 shadow_enabled = true
+
+[node name="ObjetoInteractuable" parent="." unique_id=1551380821 instance=ExtResource("2_lo48n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1365767, 0.49999905, -10.124668)
+
+[node name="ObjetoInteractuable2" parent="." unique_id=313763880 instance=ExtResource("2_lo48n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5398903, 0.49999905, -10.124668)
+
+[node name="ObjetoInteractuable3" parent="." unique_id=555163575 instance=ExtResource("2_lo48n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5398903, 0.49999905, -1.8978024)
+
+[node name="ObjetoInteractuable4" parent="." unique_id=1202163089 instance=ExtResource("2_lo48n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.420742, 0.49999905, -0.32633448)
+
+[node name="ObjetoInteractuable5" parent="." unique_id=120394268 instance=ExtResource("2_lo48n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7589283, 0.49999905, 4.887563)
