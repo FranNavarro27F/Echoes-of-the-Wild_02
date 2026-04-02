@@ -13,13 +13,12 @@ func _enter_tree():
 	set_multiplayer_authority(name.to_int())
 
 func _ready():
-	# 1. Cámara: Apagar la cámara si es un clon de otro jugador
-	if not is_multiplayer_authority():
-		$Camera3D.current = false
-		return # Si no somos nosotros, no hacemos nada más
-	
-	# 2. CAPTURAR EL RATÓN: Lo oculta y lo bloquea al centro
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	# IMPORTANTE: name.to_int() debe ser el ID de red
+	if is_multiplayer_authority():
+		$Camera3D.current = true  # Solo yo veo a través de MI cámara
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	else:
+		$Camera3D.current = false # No veo a través de las cámaras de otros
 
 
 func _physics_process(delta):

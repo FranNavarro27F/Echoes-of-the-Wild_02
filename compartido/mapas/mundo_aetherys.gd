@@ -4,9 +4,11 @@ extends Node3D
 const JUGADOR_ESCENA = preload("res://compartido/entidades/jugador.tscn")
 
 func _ready():
-	# 1. Solo el Servidor tiene permiso para crear jugadores
+	print("Mundo cargado en: ", multiplayer.get_unique_id())
 	if not multiplayer.is_server():
+		print("Soy un cliente y estoy listo")
 		return
+	# ... resto del código del servidor ...
 	
 	# 2. Conectamos la señal: "Cuando alguien se conecte, ejecuta la función añadir_jugador"
 	multiplayer.peer_connected.connect(añadir_jugador)
