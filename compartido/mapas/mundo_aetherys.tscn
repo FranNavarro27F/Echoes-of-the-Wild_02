@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://65wy7kb7hgis"]
+
+[ext_resource type="Script" uid="uid://b5iev2kuvsbw8" path="res://compartido/mapas/mundo_aetherys.gd" id="1_d7484"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_jlp2e"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d7484"]
+
+[sub_resource type="Sky" id="Sky_lo48n"]
+sky_material = SubResource("ProceduralSkyMaterial_d7484")
+
+[sub_resource type="Environment" id="Environment_h61kx"]
+background_mode = 2
+sky = SubResource("Sky_lo48n")
+
+[node name="Mundo_Aetherys" type="Node3D" unique_id=990663803]
+script = ExtResource("1_d7484")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1197354597]
+navigation_mesh = SubResource("NavigationMesh_jlp2e")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=56626630]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(50, 1, 50)
+
+[node name="GridMap" type="GridMap" parent="." unique_id=427875008]
+
+[node name="ContenedorJugadores" type="Node3D" parent="." unique_id=1060545674]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1277457757]
+_spawnable_scenes = PackedStringArray("uid://coutd6i112lns")
+spawn_path = NodePath("../ContenedorJugadores")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1344219428]
+environment = SubResource("Environment_h61kx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1065993148]
+transform = Transform3D(1, 0, 0, 0, 0.260791, 0.9653953, 0, -0.9653953, 0.260791, 0, 18.121109, 0)
+shadow_enabled = true

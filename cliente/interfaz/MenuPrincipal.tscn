@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cv7a46ui7kgdx"]
+
+[ext_resource type="Script" uid="uid://bm0iorqhh1yog" path="res://cliente/interfaz/menu_principal.gd" id="1_umqr3"]
+
+[node name="MenuPrincipal" type="Control" unique_id=114202724]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_umqr3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1708906539]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EtiquetaIP" type="Label" parent="VBoxContainer" unique_id=1669445152]
+layout_mode = 2
+
+[node name="CajaIP" type="LineEdit" parent="VBoxContainer" unique_id=320749878]
+layout_mode = 2
+placeholder_text = "Escribir IP del Host aquí..."
+
+[node name="BotonHost" type="Button" parent="VBoxContainer" unique_id=1729892854]
+layout_mode = 2
+text = "Crear Mundo (Host)"
+
+[node name="BotonJoin" type="Button" parent="VBoxContainer" unique_id=810055392]
+layout_mode = 2
+text = "Unirse a Aetherys"
+
+[connection signal="pressed" from="VBoxContainer/BotonHost" to="." method="_on_boton_host_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonJoin" to="." method="_on_boton_join_pressed"]
